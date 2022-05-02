@@ -1,0 +1,26 @@
+.top-section{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    grid-gap: 10px;
+}
+.add-item{
+    background-color: rgb(250, 186, 238);
+    color: rgb(187, 6, 6);
+    border-radius: 10px;
+    border: 1px solid #fc8c8c;
+    padding: 10px;
+}
+.my-item{
+    background-color: rgb(194, 199, 252);
+    color: rgb(4, 4, 157);
+    border-radius: 10px;
+    border: 1px solid rgb(139, 144, 250);
+    padding: 10px;
+}
+.all-item{
+    background-color: rgb(194, 199, 252);
+    color: rgb(4, 4, 157);
+    border-radius: 10px;
+    border: 1px solid rgb(139, 144, 250);
+    padding: 10px;
+}

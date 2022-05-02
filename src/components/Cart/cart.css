@@ -1,0 +1,30 @@
+.cursor{
+    cursor: pointer;
+}
+.cart{
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.cart:hover{
+    box-shadow: 0px 0px 10px #ddd;
+}
+.cart-img{
+    background-color: #c7edfb;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.cart-btn{
+    background-color: #befedf;
+    color: #05824c;
+    border: 1px solid #11f290;
+}
+.delete-btn{
+    background-color: #fed1dd;
+    color: #71033a;
+    border: 1px solid #ffa6e7;
+}
+.quantity{
+    border: 1px solid #ddd;
+    border-radius: 50%;
+}

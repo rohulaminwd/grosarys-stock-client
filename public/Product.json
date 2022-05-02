@@ -1,0 +1,98 @@
+[
+    {
+      "id": "1",
+      "name": "Health & Fitness",
+      "title": "“To strengthen & tone-up your muscles, keep you in shape and posture.”",
+      "subtitle": "Explore The Festures",
+      "price": 125,
+      "img": "https://i.ibb.co/5s51BNQ/sp-products01.png"
+    },
+    {
+      "id": "2",
+      "name": "Psycho Training",
+      "title": "“Challenges are just opportunies in disguise. View all Services!”",
+      "subtitle": "Ultimate trainings",
+      "price": 125,
+      "img": "https://i.ibb.co/Tbz1bXc/sp-products02.png"
+    },
+    {
+      "id": "3",
+      "name": "Self Defence",
+      "title": "“To Self Defence & tone-up your muscles, keep you in shape and posture.”",
+      "subtitle": "Strong people",
+      "price": 125,
+      "img": "https://i.ibb.co/Sy50ThS/sp-products03.png"
+    },
+    {
+      "id": "4",
+      "name": "Rahul Sorkar",
+      "title": "“To Self Defence & tone-up your muscles, keep you in shape and posture.”",
+      "rating": [1,2,3,4,5],
+      "price": 125,
+      "img": "https://i.ibb.co/kQpsqXS/sp-products04.png"
+    },
+    {
+      "id": "5",
+      "name": "Self Defence",
+      "title": "“After you decide to start we will make sure you get the best fitness program.”",
+      "rating": [1,2,3,4,5],
+      "price": 125,
+      "img": "https://i.ibb.co/r2r8FmL/sp-products06.png"
+    },
+    {
+      "id": "6",
+      "name": "Self Defence",
+      "title": "“We anywhere recommend gimmer for reaching your fitness goal.”",
+      "rating": [1,2,3,4,5],
+      "price": 125,
+      "img": "https://i.ibb.co/nfXfQhZ/sp-products09.png"
+    },
+    {
+      "id": "7",
+      "name": "Self Defence",
+      "title": "“We would  always recommend gimmer for reaching your fitness goal.”",
+      "rating": [1,2,3,4,5],
+      "price": 125,
+      "img": "https://i.ibb.co/wYW6tJv/sp-products10.png"
+    },
+    {
+      "id": "7",
+      "name": "Self Defence",
+      "title": "“We would  always recommend gimmer for reaching your fitness goal.”",
+      "rating": [1,2,3,4,5],
+      "price": 125,
+      "img": "https://i.ibb.co/QP1JSHw/sp-products11.png"
+    },
+    {
+      "id": "7",
+      "name": "Self Defence",
+      "title": "“We would  always recommend gimmer for reaching your fitness goal.”",
+      "rating": [1,2,3,4,5],
+      "price": 125,
+      "img": "https://i.ibb.co/WHr4FRY/sp-products12.png"
+    },
+    {
+      "id": "7",
+      "name": "Self Defence",
+      "title": "“We would  always recommend gimmer for reaching your fitness goal.”",
+      "rating": [1,2,3,4,5],
+      "price": 125,
+      "img": "https://i.ibb.co/dmFZBJN/sp-products13.png"
+    },
+    {
+      "id": "7",
+      "name": "Self Defence",
+      "title": "“We would  always recommend gimmer for reaching your fitness goal.”",
+      "rating": [1,2,3,4,5],
+      "price": 125,
+      "img": "https://i.ibb.co/5Md34Xw/sp-products14.png"
+    },
+    {
+      "id": "7",
+      "name": "Self Defence",
+      "title": "“We would  always recommend gimmer for reaching your fitness goal.”",
+      "rating": [1,2,3,4,5],
+      "price": 125,
+      "img": "https://i.ibb.co/BrmqKBf/sp-products15.png"
+    }
+]

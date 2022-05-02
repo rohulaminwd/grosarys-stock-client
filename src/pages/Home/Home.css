@@ -1,0 +1,11 @@
+.banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #def3f9;
+}
+.inventory-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    grid-gap: 30px;
+}
