@@ -14,22 +14,28 @@ import Inventory from './pages/Inventory/Inventory';
 import RequireAuth from './RequeryAuth/RequreAuth';
 import UpdaeteItem from './pages/UpdateItem/UpdaeteItem';
 import AddItem from './pages/AddItem/AddItem';
+import { useState } from 'react';
 
 function App() {
+  const [updateProduct, setUpdateProduct] = useState()
+
+  const handleUpdate = (product) => {
+      setUpdateProduct(product);
+  }
   return (
     <div className="App">
       <Navbars></Navbars>
       <Routes>
-        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/' element={<Home handleUpdate={handleUpdate}></Home>}></Route>
         <Route path='/blog' element={<Blog></Blog>}></Route>
         <Route path='/inventory' element={
           <RequireAuth>
-            <Inventory></Inventory>
+            <Inventory ></Inventory>
           </RequireAuth>
         }></Route>
         <Route path='/update' element={
           <RequireAuth>
-            <UpdaeteItem></UpdaeteItem>
+            <UpdaeteItem updateProduct={updateProduct}></UpdaeteItem>
           </RequireAuth>
         }></Route>
         <Route path='/additem' element={

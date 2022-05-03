@@ -19,8 +19,8 @@ const Inventory = () => {
                     <h5 className='fw-bold'>My Item</h5>
                 </Link>
             </div>
-            <div className="inventory my-5">
-                <div className="container inventory-container">
+            <div className="my-5">
+                <div className="container products-container">
                     {
                         product.map(p => <Cart 
                          key={p.id}

@@ -24,3 +24,8 @@
     border: 1px solid rgb(139, 144, 250);
     padding: 10px;
 }
+.products-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
