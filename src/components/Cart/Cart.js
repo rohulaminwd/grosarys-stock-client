@@ -11,7 +11,7 @@ const Cart = ({product}) => {
                 <img src={img} className='img-fluid' alt="" />
             </div>
             <div className="cart-details text-start">
-                <div className="">
+                <div className="text-cart">
                     <h5>{name}</h5>
                     <p>{title}</p>
                 </div>

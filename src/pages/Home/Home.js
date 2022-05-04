@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Cart from '../../components/Cart/Cart';
+import {FaHandsHelping} from 'react-icons/fa'
+import {GrDeliver} from 'react-icons/gr'
+import {GiCardDiscard} from 'react-icons/gi'
+import {BsEmojiSmile} from 'react-icons/bs'
+import {Ri24HoursFill} from 'react-icons/ri'
 import useProducts from '../../hooks/useProducts';
 import banner from '../../images/product (3).png'
-import banner1 from '../../images/product (4).png'
+import support from '../../images/support.png'
 import './Home.css'
 
 const Home = ({handleUpdate}) => {
@@ -51,6 +55,93 @@ const Home = ({handleUpdate}) => {
                     }
                 </div>
                 <Link className='btn btn-primary fw-bold mt-5' to='/inventory'>Manage Inventory</Link>
+            </div>
+
+            <div className="newCollection py-5 my-5">
+                <h2 className='mb-4 text-primary'>What We Provide?</h2>
+                <div className="container provide-container">
+                    <div data-aos="zoom-in-down" 
+                        data-aos-duration="1000"
+                        className="provider text-start">
+                        <div className="d-flex align-items-center justify-content-center  mb-3">
+                            <div className="img-provider">
+                                <div className='display-5 fw-bold'><FaHandsHelping /></div>
+                            </div>
+                            <div className="fw-bold me-auto">
+                                <h4>Easy Returns</h4>
+                                <p className='text-muted mb-0'>best service</p>
+                            </div>
+                        </div>
+                        <div className="pt-3 border-top border-2">
+                            <p>Knowledge base that organized collection system</p>
+                            <Link className='text-decoration-none fw-bold' to='/'>VIEW MORE</Link>
+                        </div>
+                    </div>
+
+                    <div data-aos="zoom-in-down" 
+                        data-aos-duration="1000"
+                        className="provider text-start">
+                        <div className="d-flex align-items-center justify-content-center  mb-3">
+                            <div className="img-provider">
+                                <div className='display-5 fw-bold'><GrDeliver /></div>
+                            </div>
+                            <div className="fw-bold me-auto">
+                                <h4>Free Delivery</h4>
+                                <p className='text-muted mb-0'>best service</p>
+                            </div>
+                        </div>
+                        <div className="pt-3 border-top border-2">
+                            <p>Free delivery organized collection system</p>
+                            <Link className='text-decoration-none fw-bold' to='/'>VIEW MORE</Link>
+                        </div>
+                    </div>
+
+                    <div data-aos="zoom-in-down" 
+                        data-aos-duration="1000"
+                        className="provider text-start">
+                        <div className="d-flex align-items-center justify-content-center  mb-3">
+                            <div className="img-provider">
+                                <div className='display-5 fw-bold'><GiCardDiscard /></div>
+                            </div>
+                            <div className="fw-bold me-auto">
+                                <h4>Daily Discount</h4>
+                                <p className='text-muted mb-0'>best service</p>
+                            </div>
+                        </div>
+                        <div className="pt-3 border-top border-2">
+                            <p>Daily Discount that organized collection system</p>
+                            <Link className='text-decoration-none fw-bold' to='/'>VIEW MORE</Link>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="online-support py-5">
+                <div className="container row d-flex justify-content-between align-items-center">
+                    <div className="col-md-5">
+                        <div className="img">
+                            <img src={support} className='img-fluid' alt="" />
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="text-start">
+                            <div className="">
+                                <h1>Ganic Online Support</h1>
+                                <p>Tamin ipsum is simply dummy the prinng and tysetting industry. Lorem ipsum has been the industry's standard dummy that everince prinng when unknown printer took galley.</p>
+                            </div>
+                            <div className="d-flex emo">
+                                <div className="border-end border-2 pe-2">
+                                    <p>AROUND THE CLOCK SUPPORT</p>
+                                    <div className="text-success d-flex"><BsEmojiSmile className='display-4' /> <h1 className='text-secondary ms-3'>98.9%</h1></div>
+                                </div>
+                                <div className="px-2 emo">
+                                    <p>CUSTOMER HAPPINESS RATING</p>
+                                    <div className="d-flex text-success"><Ri24HoursFill className='display-4' /> <h1 className='text-secondary ms-3'>24/7</h1></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

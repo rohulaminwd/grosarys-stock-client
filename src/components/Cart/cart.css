@@ -36,6 +36,9 @@
     margin-left: 10px;
     padding: 10px;
 }
+.text-cart{
+    width: 50%;
+}
 .cart-img{
     background-color: #c7edfb;
     border-top-left-radius: 10px;
@@ -67,7 +70,7 @@
 
 @media only screen and (max-width: 950px){
     .cart-detail{
-        width: 100%;
+        width: 40%;
         display: block;
     }
 }
@@ -75,6 +78,9 @@
     .cart-details{
         display: block;
         height: auto;
+    }
+    .text-cart{
+        width: 100%;
     }
     .cart-detail{
         width: 100%;
