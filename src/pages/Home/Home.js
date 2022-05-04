@@ -11,8 +11,8 @@ import support from '../../images/support.png'
 import './Home.css'
 
 const Home = ({handleUpdate}) => {
-    const [product, setProduct] = useProducts()
-    console.log(product.length)
+    const [products, setProduct] = useProducts()
+    console.log(products.length)
     
     return (
         <div>
@@ -36,7 +36,7 @@ const Home = ({handleUpdate}) => {
                 <h3 className='fw-bold text-primary my-4'>Our Manage Items</h3>
                 <div className="container inventory-container">
                     {
-                        product.slice(0, 6).map(p => <div className='update-cart'>
+                        products.slice(0, 6).map(p => <div className='update-cart'>
                             <div className="cart-img p-3">
                                 <img src={p.img} className='img-fluid' alt="" />
                             </div>
@@ -55,7 +55,7 @@ const Home = ({handleUpdate}) => {
                         </div>)
                     }
                 </div>
-                <h1>all item: {product.length}</h1>
+                <h1>all item: {products.length}</h1>
                 <Link className='btn btn-primary fw-bold mt-5' to='/inventory'>Manage Inventory</Link>
             </div>
 

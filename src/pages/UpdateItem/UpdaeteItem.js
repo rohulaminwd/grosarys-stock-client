@@ -3,7 +3,29 @@ import { Link } from 'react-router-dom';
 import './Update.css'
 
 const UpdaeteItem = ({updateProduct}) => {
-    const {img, name, price, title, seller, stock} = updateProduct
+    const {img, name, price, title, seller, stock, _id} = updateProduct
+
+    const handleUpDateProduct= (e) => {
+        e.preventDefault();
+        const stock = e.target.stock.value;
+        
+        // send data to the server
+        const url = `http://localhost:5000/product/${_id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(stock)
+        })
+        .then (res => res.json())
+        .then (data => {
+            console.log('SUCCESS DATA LOADE',data)
+            e.target.reset();
+            alert('User Update successfully')
+        })
+        
+    }
     return (
         <div className='my-5 container'>
             <div className="row d-flex justify-content-between align-items-center">
@@ -34,9 +56,9 @@ const UpdaeteItem = ({updateProduct}) => {
                 <div className="col-md-5">
                     <div className="update-item">
                         <h4 className='update-header'>Update Quantity and Link</h4>
-                        <form action="" className='form-item'>
+                        <form onSubmit={handleUpDateProduct} action="" className='form-item'>
                             <div className="update-quantity">
-                                <input type="text" name='name' className='quantity-input' placeholder='Quantity' required />
+                                <input type="text" name='stock' className='quantity-input' placeholder='Quantity' required />
                                 <input className='quantity-btn btn btn-danger' type="submit" value="Add Quantity" />
                             </div>
                         </form>

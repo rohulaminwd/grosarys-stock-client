@@ -2,9 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {FiDelete} from 'react-icons/fi'
 import './cart.css'
+import useProducts from '../../hooks/useProducts';
 
-const Cart = ({product}) => {
+const Cart = ({product, handleProductDelete}) => {
+    
     const {img, title, name, price, seller, stock} = product
+
+    
+
     return (
         <div className='cart'>
             <div className="img1 p-3">
@@ -23,7 +28,7 @@ const Cart = ({product}) => {
                     <h5 className='fw-bold text-danger'>${price}</h5>
                 </div>
             </div>
-            <div className='fs-3 delete-btn1 my-0 py-0 fw-bold'><FiDelete /></div>
+            <div onClick={() => handleProductDelete(product._id)} className='fs-3 delete-btn1 my-0 py-0 fw-bold'><FiDelete /></div>
         </div>
     );
 };

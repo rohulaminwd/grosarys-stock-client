@@ -5,7 +5,24 @@ import useProducts from '../../hooks/useProducts';
 import './Inventory.css'
 
 const Inventory = () => {
-    const [product, setProduct] = useProducts()
+    const [products, setProduct] = useProducts()
+
+    const handleProductDelete = id => {
+        const prossed = window.confirm('Are YOu sure detele this user')
+        if(prossed){
+            console.log(id)
+            const url = `http://localhost:5000/product/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                const remaining = products.filter(p => p._id !== id)
+                setProduct(remaining);
+            })
+        }
+    }
     return (
         <div>
             <div className="top-section container my-5">
@@ -22,9 +39,10 @@ const Inventory = () => {
             <div className="my-5">
                 <div className="container products-container">
                     {
-                        product.map(p => <Cart 
+                        products.map(p => <Cart 
                          key={p.id}
                          product={p}
+                         handleProductDelete={handleProductDelete}
                         ></Cart>)
                     }
                 </div>

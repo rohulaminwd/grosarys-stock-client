@@ -1,7 +1,7 @@
 const { useState, useEffect } = require("react")
 
 const useProducts = () => {
-    const [product, setProduct] = useState([])
+    const [products, setProduct] = useState([])
 
     useEffect(() => {
         fetch("http://localhost:5000/product")
@@ -9,6 +9,6 @@ const useProducts = () => {
         .then(data => setProduct(data))
     }, [])
 
-    return [product, setProduct];
+    return [products, setProduct];
 }
 export default useProducts;
