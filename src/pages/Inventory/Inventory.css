@@ -29,3 +29,12 @@
     grid-template-columns: 1fr;
     grid-gap: 10px;
 }
+.delete-btn{
+    position: absolute;
+    right: 10px;
+    top: 0;
+    color: brown;
+    font-weight: 700;
+    font-size: 20px;
+    cursor: pointer;
+}

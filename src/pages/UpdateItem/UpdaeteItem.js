@@ -34,7 +34,7 @@ const UpdaeteItem = ({updateProduct}) => {
                 <div className="col-md-5">
                     <div className="update-item">
                         <h4 className='update-header'>Update Quantity and Link</h4>
-                        <form action="" className=''>
+                        <form action="" className='form-item'>
                             <div className="update-quantity">
                                 <input type="text" name='name' className='quantity-input' placeholder='Quantity' required />
                                 <input className='quantity-btn btn btn-danger' type="submit" value="Add Quantity" />

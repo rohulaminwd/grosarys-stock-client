@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import {AiOutlineDelete} from 'react-icons/ai'
+import {FiDelete} from 'react-icons/fi'
 import './cart.css'
 
 const Cart = ({product}) => {
@@ -23,9 +23,7 @@ const Cart = ({product}) => {
                     <h5 className='fw-bold text-danger'>${price}</h5>
                 </div>
             </div>
-            <div className="h-100">
-                <div className='fs-1 text-danger my-0 py-0 fw-bold'><AiOutlineDelete /></div>
-            </div>
+            <div className='fs-3 delete-btn1 my-0 py-0 fw-bold'><FiDelete /></div>
         </div>
     );
 };

@@ -12,6 +12,7 @@ import './Home.css'
 
 const Home = ({handleUpdate}) => {
     const [product, setProduct] = useProducts()
+    console.log(product.length)
     
     return (
         <div>
@@ -54,6 +55,7 @@ const Home = ({handleUpdate}) => {
                         </div>)
                     }
                 </div>
+                <h1>all item: {product.length}</h1>
                 <Link className='btn btn-primary fw-bold mt-5' to='/inventory'>Manage Inventory</Link>
             </div>
 
