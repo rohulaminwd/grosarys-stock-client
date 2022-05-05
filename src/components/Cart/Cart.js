@@ -1,8 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import {FiDelete} from 'react-icons/fi'
 import './cart.css'
-import useProducts from '../../hooks/useProducts';
 
 const Cart = ({product, handleProductDelete}) => {
     
