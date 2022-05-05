@@ -49,7 +49,7 @@ const Home = ({handleUpdate}) => {
                                 </div>
                                 <div className="d-flex align-items-center justify-content-between mt-4">
                                     <h5 className='fw-bold text-danger'>${p.price}</h5>
-                                    <Link onClick={() => handleUpdate(p)} to='/update' className='btn cart-btn fw-bold rounded-pill'>Update</Link>
+                                    <Link onClick={() => handleUpdate(p)} to={`/update/${p._id}`} className='btn cart-btn fw-bold rounded-pill'>Update</Link>
                                 </div>
                             </div>
                         </div>)

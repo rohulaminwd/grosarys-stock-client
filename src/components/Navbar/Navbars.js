@@ -41,15 +41,9 @@ console.log(toggle)
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto d-flex align-items-center">
                         <NavLink className={({ isActive }) => isActive? 'actived-link' : 'linkd'} to="/">Home</NavLink>
-                        <NavLink className={({ isActive }) => isActive? 'actived-link' : 'linkd'} to="/inventory">Inventory</NavLink>
+                        <NavLink className={({ isActive }) => isActive? 'actived-link' : 'linkd'} to="/inventory">ManageItem</NavLink>
                         <NavLink className={({ isActive }) => isActive? 'actived-link' : 'linkd'} to="/blog">Blog</NavLink>
-                        <NavLink className={({ isActive }) => isActive? 'actived-link' : 'linkd'} to="/card">
-                           <div className="position-relative">
-                            <FiShoppingCart></FiShoppingCart>
-                            <span className='cart-count'>1</span>
-                           </div>
-                        </NavLink>
-                        {/* <NavLink className={({ isActive }) => isActive? 'actived-link' : 'linkd'} to="/delivery">Delivery</NavLink> */}
+                        <NavLink className={({ isActive }) => isActive? 'actived-link' : 'linkd'} to="/additem">AddItem</NavLink>
                         {
                             user ?
                             <div onClick={() => displayTaggle()} className='user-profile ms-4'>

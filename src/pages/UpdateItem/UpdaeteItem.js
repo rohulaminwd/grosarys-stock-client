@@ -1,22 +1,38 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import './Update.css'
 
 const UpdaeteItem = ({updateProduct}) => {
-    const {img, name, price, title, seller, stock, _id} = updateProduct
+    // const {img, name, price, title, seller, stock} = updateProduct
+
+    const {id} = useParams()
+    const [product, setProdcut] = useState({})
+    let quantity = parseInt(product?.stock)
+    console.log(quantity)
+    const {img, name, price, title, seller} = product;
+    useEffect(() => {
+        const url = `http://localhost:5000/product/${id}`;
+        fetch(url)
+        .then(res => res.json())
+        .then(data => setProdcut(data))
+    }, [])
+
 
     const handleUpDateProduct= (e) => {
         e.preventDefault();
-        const stock = e.target.stock.value;
+        const stock = parseInt(e.target.stock.value);
+        console.log(stock)
+        const newQuantity = parseInt(stock + quantity)
+        console.log(newQuantity)
         
         // send data to the server
-        const url = `http://localhost:5000/product/${_id}`;
+        const url = `http://localhost:5000/product/${id}`;
         fetch(url, {
             method: 'PUT',
             headers: {
-                'content-type': 'application/json'
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify(stock)
+            body: JSON.stringify(newQuantity)
         })
         .then (res => res.json())
         .then (data => {
@@ -24,6 +40,10 @@ const UpdaeteItem = ({updateProduct}) => {
             e.target.reset();
             alert('User Update successfully')
         })
+        
+    }
+
+    const handleDelivered = () => {
         
     }
     return (
@@ -39,7 +59,7 @@ const UpdaeteItem = ({updateProduct}) => {
                             <p>{title}</p>
                             <div className="d-flex align-items-center justify-content-between">
                                 <h5 className='fw-bold text-primary'>{seller}</h5> 
-                                <div className="quantity btn fw-bold">{stock}</div>  
+                                <div className="quantity btn fw-bold">{quantity}</div>  
                                 {/* <div className="d-flex align-items-center justify-content-center border rounded-pill">
                                     <span className='cursor p-2 mx-1 fw-bold'>-</span>
                                     <span className='cursor p-2 mx-1 fw-bold'>1</span>
@@ -48,7 +68,7 @@ const UpdaeteItem = ({updateProduct}) => {
                             </div>
                             <div className="d-flex align-items-center justify-content-between mt-4">
                                 <h5 className='fw-bold text-danger'>${price}</h5>
-                                <button className='btn cart-btn fw-bold rounded-pill'>delivered</button>
+                                <button onClick={handleDelivered} className='btn cart-btn fw-bold rounded-pill'>delivered</button>
                             </div>
                         </div>
                     </div>
@@ -58,7 +78,7 @@ const UpdaeteItem = ({updateProduct}) => {
                         <h4 className='update-header'>Update Quantity and Link</h4>
                         <form onSubmit={handleUpDateProduct} action="" className='form-item'>
                             <div className="update-quantity">
-                                <input type="text" name='stock' className='quantity-input' placeholder='Quantity' required />
+                                <input type="number" name='stock' className='quantity-input' placeholder='Quantity' required />
                                 <input className='quantity-btn btn btn-danger' type="submit" value="Add Quantity" />
                             </div>
                         </form>
