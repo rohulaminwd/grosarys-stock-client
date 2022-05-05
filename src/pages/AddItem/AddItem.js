@@ -1,17 +1,22 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast} from 'react-toastify';
+import auth from '../../firebase.init';
 import './AddItem.css'
 
 const AddItem = () => {
+    const [user] = useAuthState(auth)
 
     const hendelProductAdd = (e) => {
         e.preventDefault();
         const name = e.target.name.value;
+        const email = user?.email
         const seller = e.target.seller.value;
         const img = e.target.img.value;
         const stock = e.target.stock.value;
         const price = e.target.price.value;
         const title = e.target.title.value;
-        const product = {name, seller, img, stock, price, title}
+        const product = {name, seller, img, stock, price, title, email}
         console.log(product)
         
         // send data to the server
@@ -26,7 +31,7 @@ const AddItem = () => {
         .then (data => {
             console.log('SUCCESS DATA LOADE',data)
             e.target.reset();
-            alert('product added successfully')
+            toast('product added successfully')
         })
         
     }

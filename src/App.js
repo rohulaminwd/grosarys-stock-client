@@ -1,4 +1,5 @@
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -15,6 +16,8 @@ import RequireAuth from './RequeryAuth/RequreAuth';
 import UpdaeteItem from './pages/UpdateItem/UpdaeteItem';
 import AddItem from './pages/AddItem/AddItem';
 import { useState } from 'react';
+import { ToastContainer } from 'react-toastify';
+import MyItem from './pages/MyItem/MyItem';
 
 function App() {
   const [updateProduct, setUpdateProduct] = useState()
@@ -43,11 +46,17 @@ function App() {
             <AddItem></AddItem>
           </RequireAuth>
         }></Route>
+        <Route path='/myitem' element={
+          <RequireAuth>
+            <MyItem></MyItem>
+          </RequireAuth>
+        }></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
         <Route path='*' element={<Notfound></Notfound>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer />
     </div>
   );
 }

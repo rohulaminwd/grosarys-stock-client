@@ -27,7 +27,7 @@ const Inventory = () => {
         <div>
             <div className="top-section container my-5">
                 <div className="all-item">
-                    <h5 className='fw-bold'>All Item: 12</h5>
+                    <h5 className='fw-bold'>Total Item: <span className='text-success'>{products.length}</span></h5>
                 </div>
                 <Link to='/additem' className="add-item btn">
                     <h5 className='fw-bold'>Add item</h5>
