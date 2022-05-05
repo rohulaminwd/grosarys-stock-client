@@ -7,12 +7,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDCn_SboqyqslzqUAmAvOCqxZXQiz2imTA",
-  authDomain: "grocery-stock-90a1c.firebaseapp.com",
-  projectId: "grocery-stock-90a1c",
-  storageBucket: "grocery-stock-90a1c.appspot.com",
-  messagingSenderId: "248861785202",
-  appId: "1:248861785202:web:8716c4526900616e61d6eb"
+  apiKey:process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId:process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId,
+  appId:process.en.REACT_APP_appId,
 };
 
 // Initialize Firebase
@@ -20,3 +20,11 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 export default auth;
+
+
+// apiKey: "AIzaSyDCn_SboqyqslzqUAmAvOCqxZXQiz2imTA",
+// authDomain: "grocery-stock-90a1c.firebaseapp.com",
+// projectId: "grocery-stock-90a1c",
+// storageBucket: "grocery-stock-90a1c.appspot.com",
+// messagingSenderId: "248861785202",
+// appId: "1:248861785202:web:8716c4526900616e61d6eb"

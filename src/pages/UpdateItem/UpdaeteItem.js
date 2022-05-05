@@ -22,7 +22,7 @@ const UpdaeteItem = ({updateProduct}) => {
         e.preventDefault();
         const stock = parseInt(e.target.stock.value);
         console.log(stock)
-        const newQuantity = parseInt(stock + quantity)
+        let newQuantity = parseInt(stock + quantity)
         console.log(newQuantity)
         
         // send data to the server
