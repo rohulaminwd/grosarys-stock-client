@@ -1,5 +1,6 @@
 import React from 'react';
 import {FiDelete} from 'react-icons/fi'
+import { Link } from 'react-router-dom';
 import './cart.css'
 
 const Cart = ({product, handleProductDelete}) => {
@@ -27,6 +28,7 @@ const Cart = ({product, handleProductDelete}) => {
                 </div>
             </div>
             <div onClick={() => handleProductDelete(product._id)} className='fs-3 delete-btn1 my-0 py-0 fw-bold'><FiDelete /></div>
+            <Link to={`/update/${product._id}`} className='btn cart-btn fw-bold update-btn1 rounded-pill'>Update</Link>
         </div>
     );
 };

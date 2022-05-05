@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import Loading from '../../components/Loding/Loding';
 import './Update.css'
 
 const UpdaeteItem = ({updateProduct}) => {
@@ -8,6 +9,11 @@ const UpdaeteItem = ({updateProduct}) => {
     const {id} = useParams()
     const [product, setProdcut] = useState({})
     let quantity = parseInt(product?.stock)
+    useEffect(() => {
+        setQuantity(quantity)
+    }, [product]);
+ 
+    const [stockQuantity, setQuantity] = useState(quantity)
     console.log(quantity)
     const {img, name, price, title, seller} = product;
     useEffect(() => {
@@ -17,12 +23,16 @@ const UpdaeteItem = ({updateProduct}) => {
         .then(data => setProdcut(data))
     }, [])
 
+    
+    if(!product){
+        return <Loading></Loading>
+    }
 
     const handleUpDateProduct= (e) => {
         e.preventDefault();
         const stock = parseInt(e.target.stock.value);
         console.log(stock)
-        let newQuantity = parseInt(stock + quantity)
+        let newQuantity = parseInt(stockQuantity + stock)
         console.log(newQuantity)
         
         // send data to the server
@@ -40,14 +50,46 @@ const UpdaeteItem = ({updateProduct}) => {
             e.target.reset();
             alert('User Update successfully')
         })
-        
+        setQuantity(newQuantity);
     }
-
+    // delivered update value quantity
     const handleDelivered = () => {
+        let newQuantity = 1 
+        if(stockQuantity > 1){
+            newQuantity = stockQuantity -1
+        }else{
+            newQuantity = 1
+        }
         
+        // send data to the server
+        const url = `http://localhost:5000/product/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newQuantity)
+        })
+        .then (res => res.json())
+        .then (data => {
+            console.log('SUCCESS DATA LOADE',data)
+            alert('User Update successfully')
+        })
+        setQuantity(newQuantity);
     }
     return (
         <div className='my-5 container'>
+            <div className="top-section container my-5">
+                <Link to='/myitem' className="my-item btn">
+                    <h5 className='fw-bold'>My Item</h5>
+                </Link>
+                <Link to='/additem' className="add-item btn">
+                    <h5 className='fw-bold'>Add item</h5>
+                </Link>
+                <Link to='/inventory' className="my-item btn">
+                    <h5 className='fw-bold'>Manage Item</h5>
+                </Link>
+            </div>
             <div className="row d-flex justify-content-between align-items-center">
                 <div className="col-md-6">
                     <div className='update-cart'>
@@ -59,7 +101,7 @@ const UpdaeteItem = ({updateProduct}) => {
                             <p>{title}</p>
                             <div className="d-flex align-items-center justify-content-between">
                                 <h5 className='fw-bold text-primary'>{seller}</h5> 
-                                <div className="quantity btn fw-bold">{quantity}</div>  
+                                <div className="quantity btn fw-bold">{stockQuantity}</div>  
                                 {/* <div className="d-flex align-items-center justify-content-center border rounded-pill">
                                     <span className='cursor p-2 mx-1 fw-bold'>-</span>
                                     <span className='cursor p-2 mx-1 fw-bold'>1</span>
@@ -84,11 +126,11 @@ const UpdaeteItem = ({updateProduct}) => {
                         </form>
                         <div className="d-flex align-items-center justify-content-between p-3">
                             <Link to='/additem' className='btn cart-btn fw-bold rounded-pill'>Add Item</Link>
-                            <button className='btn cart-btn fw-bold rounded-pill'>My Item</button>
-                            <button className='btn cart-btn fw-bold rounded-pill'>Manage Item</button>
+                            <Link to='/myitem' className='btn cart-btn fw-bold rounded-pill'>My Item</Link>
+                            <Link to='/inventory' className='btn cart-btn fw-bold rounded-pill'>Manage Item</Link>
                         </div>
                         <div className="d-flex align-items-center justify-content-between p-3 link-item">
-                         <button className='btn w-50 mx-auto cart-btn fw-bold rounded-pill'>delivered</button>
+                         <button onClick={handleDelivered} className='btn w-50 mx-auto cart-btn fw-bold rounded-pill'>delivered</button>
                         </div>
                     </div>
                 </div>

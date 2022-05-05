@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Cart from '../../components/Cart/Cart';
+import Loading from '../../components/Loding/Loding';
 import useProducts from '../../hooks/useProducts';
 import './Inventory.css'
 
@@ -25,6 +26,10 @@ const Inventory = () => {
             toast("Deleted successfully");
         }
     }
+    if(!products){
+        return <Loading></Loading>
+    }
+
     return (
         <div>
             <div className="top-section container my-5">
@@ -35,7 +40,7 @@ const Inventory = () => {
                     <h5 className='fw-bold'>Add item</h5>
                 </Link>
                 <Link to='/myitem' className="my-item btn">
-                    <h5 className='fw-bold'>Manage Item</h5>
+                    <h5 className='fw-bold'>My Item</h5>
                 </Link>
             </div>
             <div className="my-5">

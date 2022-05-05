@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import { toast} from 'react-toastify';
 import auth from '../../firebase.init';
 import './AddItem.css'
@@ -37,6 +38,14 @@ const AddItem = () => {
     }
     return (
         <div>
+            <div className="top-section container my-5">
+                <Link to='/myitem' className="add-item btn">
+                    <h5 className='fw-bold'>My Item</h5>
+                </Link>
+                <Link to='/inventory' className="my-item btn">
+                    <h5 className='fw-bold'>Manage Item</h5>
+                </Link>
+            </div>
             <div className="update-item my-5">
                 <h4 className='update-header'>Add Item</h4>
                 <form onSubmit={hendelProductAdd} action="">

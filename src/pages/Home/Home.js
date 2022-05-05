@@ -9,10 +9,14 @@ import useProducts from '../../hooks/useProducts';
 import banner from '../../images/product (3).png'
 import support from '../../images/support.png'
 import './Home.css'
+import Loading from '../../components/Loding/Loding';
 
 const Home = ({handleUpdate}) => {
     const [products, setProduct] = useProducts()
     console.log(products.length)
+    if(!products){
+        return <Loading></Loading>
+    }
     
     return (
         <div>
@@ -55,7 +59,6 @@ const Home = ({handleUpdate}) => {
                         </div>)
                     }
                 </div>
-                <h1>all item: {products.length}</h1>
                 <Link className='btn btn-primary fw-bold mt-5' to='/inventory'>Manage Inventory</Link>
             </div>
 

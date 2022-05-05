@@ -11,13 +11,21 @@
 }
 .delete-btn1{
     position: absolute;
-    right: 10px;
-    top: 0;
+    right: 5px;
+    top: -5px;
     color: brown;
     font-weight: 700;
     font-size: 20px;
     cursor: pointer;
 }
+.update-btn1{
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    color: brown;
+    cursor: pointer;
+}
+
 .cart-details{
     display: flex;
     align-items: center;
