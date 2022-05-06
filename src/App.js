@@ -1,5 +1,7 @@
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
+import "aos/dist/aos.css";
+import AOS from "aos";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,6 +22,7 @@ import { ToastContainer } from 'react-toastify';
 import MyItem from './pages/MyItem/MyItem';
 
 function App() {
+  AOS.init();
   const [updateProduct, setUpdateProduct] = useState()
 
   const handleUpdate = (product) => {

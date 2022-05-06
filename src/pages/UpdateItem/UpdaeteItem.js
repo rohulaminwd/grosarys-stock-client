@@ -30,10 +30,10 @@ const UpdaeteItem = ({updateProduct}) => {
 
     const handleUpDateProduct= (e) => {
         e.preventDefault();
-        const stock = parseInt(e.target.stock.value);
+        const stockInput = parseInt(e.target.stockInput.value);
+        console.log(stockInput)
+        let stock = parseInt(stockQuantity + stockInput);
         console.log(stock)
-        let newQuantity = parseInt(stockQuantity + stock)
-        console.log(newQuantity)
         
         // send data to the server
         const url = `http://localhost:5000/product/${id}`;
@@ -42,25 +42,23 @@ const UpdaeteItem = ({updateProduct}) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(newQuantity)
+            body: JSON.stringify({stock})
         })
         .then (res => res.json())
         .then (data => {
             console.log('SUCCESS DATA LOADE',data)
             e.target.reset();
-            alert('User Update successfully')
         })
-        setQuantity(newQuantity);
+        setQuantity(stock);
     }
     // delivered update value quantity
     const handleDelivered = () => {
-        let newQuantity = 1 
+        let stock = 1 
         if(stockQuantity > 1){
-            newQuantity = stockQuantity -1
+            stock = stockQuantity -1
         }else{
-            newQuantity = 1
+            stock = 1
         }
-        
         // send data to the server
         const url = `http://localhost:5000/product/${id}`;
         fetch(url, {
@@ -68,14 +66,13 @@ const UpdaeteItem = ({updateProduct}) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(newQuantity)
+            body: JSON.stringify({stock})
         })
         .then (res => res.json())
         .then (data => {
             console.log('SUCCESS DATA LOADE',data)
-            alert('User Update successfully')
         })
-        setQuantity(newQuantity);
+        setQuantity(stock);
     }
     return (
         <div className='my-5 container'>
@@ -120,7 +117,7 @@ const UpdaeteItem = ({updateProduct}) => {
                         <h4 className='update-header'>Update Quantity and Link</h4>
                         <form onSubmit={handleUpDateProduct} action="" className='form-item'>
                             <div className="update-quantity">
-                                <input type="number" name='stock' className='quantity-input' placeholder='Quantity' required />
+                                <input type="number" name='stockInput' className='quantity-input' placeholder='Quantity' required />
                                 <input className='quantity-btn btn btn-danger' type="submit" value="Add Quantity" />
                             </div>
                         </form>

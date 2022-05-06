@@ -43,8 +43,8 @@ const SignUp = () => {
 
     return (
         <div className='login-container' data-aos="zoom-in-up" data-aos-duration="800">
-            <h1>Sign Up</h1>
-            <form onSubmit={handleCreatUser}>
+            <h3 className='header-login'>Sign Up</h3>
+            <form onSubmit={handleCreatUser} className='p-4'>
                 <div className="input-item">
                     <label htmlFor="email">Email</label>
                     <input onChange={handleEmail} type="email" name="email" id="" required />
@@ -58,7 +58,7 @@ const SignUp = () => {
                     <input onChange={handleCorrectPass} type="password" name="password" id="" required />
                 </div>
                 <div className="btn-item">
-                    <button type='submit' className='login-btn btn'>Sign Up</button>
+                    <button type='submit' className='login-btn btn fw-bold'>Sign Up</button>
                     <p>Already have an account? <Link to='/login' className='signup-link'>Login</Link> </p>
                 </div>
                 <div className="or-item">

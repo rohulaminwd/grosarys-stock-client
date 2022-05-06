@@ -37,8 +37,8 @@ const Login = () => {
     }
     return (
         <div className='login-container' data-aos="zoom-in-up" data-aos-duration="800">
-            <h1>Login</h1>
-            <form onSubmit={handleSignIn} action="">
+            <h3 className='header-login'>Login</h3>
+            <form onSubmit={handleSignIn} action="" className='p-4'>
                 <div className="input-item">
                     <label htmlFor="email">Email</label>
                     <input onBlur={handleEmail} type="email" name="email" id=""/>
@@ -48,7 +48,7 @@ const Login = () => {
                     <input onBlur={handlePassword} type="password" name="password" id="" />
                 </div>
                 <div className="btn-item">
-                    <button type='submit' className='login-btn btn'>Login</button>
+                    <button type='submit' className='login-btn btn fw-bold'>Login</button>
                     <p>New to Ema-john? <Link className='signup-link' to='/signup'>Create New Account</Link> </p>
                 </div>
                 <div className="or-item">
