@@ -89,7 +89,7 @@ const UpdaeteItem = ({updateProduct}) => {
             </div>
             <div className="row d-flex justify-content-between align-items-center">
                 <div className="col-md-6">
-                    <div className='update-cart'>
+                    <div className='update-cart' data-aos="zoom-in-right" data-aos-duration="1000">
                         <div className="cart-img p-3">
                             <img src={img} className='img-fluid' alt="" />
                         </div>
@@ -113,7 +113,7 @@ const UpdaeteItem = ({updateProduct}) => {
                     </div>
                 </div>
                 <div className="col-md-5">
-                    <div className="update-item">
+                    <div className="update-item" data-aos="zoom-in-left" data-aos-duration="800">
                         <h4 className='update-header'>Update Quantity and Link</h4>
                         <form onSubmit={handleUpDateProduct} action="" className='form-item'>
                             <div className="update-quantity">

@@ -8,7 +8,7 @@ const Notfound = () => {
                 <h1>Opp,s NO..!! Page are NOt found</h1>
                 <h1>404 Error..!!</h1>
             </div>
-            <div className="p-5 margin-top">
+            <div className="p-5 margin-top" data-aos="zoom-in-up" data-aos-duration="800">
                 <img src={NotFound} className='img-fluid' alt="" />
             </div>
         </div>

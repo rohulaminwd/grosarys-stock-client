@@ -46,7 +46,7 @@ const AddItem = () => {
                     <h5 className='fw-bold'>Manage Item</h5>
                 </Link>
             </div>
-            <div className="update-item my-5">
+            <div className="update-item my-5"  data-aos="zoom-in-down" data-aos-duration="800">
                 <h4 className='update-header'>Add Item</h4>
                 <form onSubmit={hendelProductAdd} action="">
                     <div className="form-item">

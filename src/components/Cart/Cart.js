@@ -10,7 +10,7 @@ const Cart = ({product, handleProductDelete}) => {
     
 
     return (
-        <div className='cart'>
+        <div className='cart' data-aos="zoom-in-up" data-aos-duration="800">
             <div className="img1 p-3">
                 <img src={img} className='img-fluid' alt="" />
             </div>

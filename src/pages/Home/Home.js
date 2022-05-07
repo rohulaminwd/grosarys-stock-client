@@ -40,7 +40,7 @@ const Home = ({handleUpdate}) => {
                 <h3 className='fw-bold text-primary my-4'>Our Manage Items</h3>
                 <div className="container inventory-container">
                     {
-                        products.slice(0, 6).map(p => <div className='update-cart'>
+                        products.slice(0, 6).map(p => <div className='update-cart'  data-aos="zoom-in-up" data-aos-duration="800">
                             <div className="cart-img p-3">
                                 <img src={p.img} className='img-fluid' alt="" />
                             </div>
@@ -65,8 +65,8 @@ const Home = ({handleUpdate}) => {
             <div className="newCollection py-5 my-5">
                 <h2 className='mb-4 text-primary'>What We Provide?</h2>
                 <div className="container provide-container">
-                    <div data-aos="zoom-in-down" 
-                        data-aos-duration="1000"
+                    <div data-aos="zoom-in-right" 
+                        data-aos-duration="500"
                         className="provider text-start">
                         <div className="d-flex align-items-center justify-content-center  mb-3">
                             <div className="img-provider">
@@ -84,7 +84,7 @@ const Home = ({handleUpdate}) => {
                     </div>
 
                     <div data-aos="zoom-in-down" 
-                        data-aos-duration="1000"
+                        data-aos-duration="800"
                         className="provider text-start">
                         <div className="d-flex align-items-center justify-content-center  mb-3">
                             <div className="img-provider">
@@ -101,7 +101,7 @@ const Home = ({handleUpdate}) => {
                         </div>
                     </div>
 
-                    <div data-aos="zoom-in-down" 
+                    <div data-aos="zoom-in-left" 
                         data-aos-duration="1000"
                         className="provider text-start">
                         <div className="d-flex align-items-center justify-content-center  mb-3">
@@ -124,12 +124,12 @@ const Home = ({handleUpdate}) => {
             <div className="online-support py-5">
                 <div className="container row d-flex justify-content-between align-items-center">
                     <div className="col-md-5">
-                        <div className="img">
+                        <div className="img" data-aos="zoom-in-right" data-aos-duration="800">
                             <img src={support} className='img-fluid' alt="" />
                         </div>
                     </div>
                     <div className="col-md-6">
-                        <div className="text-start">
+                        <div className="text-start"  data-aos="zoom-in-left" data-aos-duration="800">
                             <div className="">
                                 <h1>Ganic Online Support</h1>
                                 <p>Tamin ipsum is simply dummy the prinng and tysetting industry. Lorem ipsum has been the industry's standard dummy that everince prinng when unknown printer took galley.</p>
