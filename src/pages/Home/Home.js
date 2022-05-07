@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {FaHandsHelping} from 'react-icons/fa'
 import {GrDeliver} from 'react-icons/gr'
@@ -6,35 +6,78 @@ import {GiCardDiscard} from 'react-icons/gi'
 import {BsEmojiSmile} from 'react-icons/bs'
 import {Ri24HoursFill} from 'react-icons/ri'
 import useProducts from '../../hooks/useProducts';
-import banner from '../../images/product (3).png'
+import banner1 from '../../images/banner11.jpg'
+import banner2 from '../../images/banner1 (1).jpg'
+import banner3 from '../../images/banner1 (2).jpg'
 import support from '../../images/support.png'
 import './Home.css'
 import Loading from '../../components/Loding/Loding';
+import { Carousel } from 'react-bootstrap';
 
 const Home = ({handleUpdate}) => {
     const [products, setProduct] = useProducts()
+    const [index, setIndex] = useState(0);
+
     console.log(products.length)
     if(!products){
         return <Loading></Loading>
     }
+
+    const handleSelect = (selectedIndex, e) => {
+        setIndex(selectedIndex);
+    };
     
     return (
         <div>
-            <div className="banner row">
-                <div className="col-md-6">
-                    <div className="">
-                        <h3>Start the shop</h3>
-                        <h3>Start the shop</h3>
-                        <h3>Start the shop</h3>
-                        <h3>Start the shop</h3>
+            <Carousel activeIndex={index} onSelect={handleSelect}>
+            <Carousel.Item className='position-relative banner'>
+                <img
+                className="d-block w-100 banner-img"
+                src={banner1}
+                alt="First slide"
+                />
+                <Carousel.Caption className='overly'>
+                    <div className="description-title">
+                        <h1 className='fw-bold display-5'>Hormel Foods Corporation</h1>
+                        <h5 className='fw-bold'>You might also like to checkout our highly popular Items</h5>
+                        <p className='fe-bold'>Thsi is Popular Grocery stock store and all Popular items food able able</p>
+                        <button className='btn fs-6 cart-btn fw-bold rounded-pill'>Register Now</button>
                     </div>
-                </div>
-                <div className="col-md-6">
-                    <div className="img">
-                        <img src={banner} className='img-fluid' alt="" />
+                </Carousel.Caption>
+            </Carousel.Item>
+            <Carousel.Item className='position-relative banner'>
+                <img
+                className="d-block w-100 banner-img"
+                src={banner2}
+                alt="First slide"
+                />
+                <Carousel.Caption className='overly'>
+                    <div className="description-title">
+                        <h1 className='fw-bold display-5 text-danger'>Fresh Grocery Shopping</h1>
+                        <h5 className='fw-bold'>You might also like to checkout our highly popular Items</h5>
+                        <p className='fe-bold'>Thsi is Popular Grocery stock store and all Popular items food able able</p>
+                        <button className='btn fs-6 cart-btn fw-bold rounded-pill'>Register Now</button>
                     </div>
-                </div>
-            </div>
+                </Carousel.Caption>
+            </Carousel.Item>
+            
+            <Carousel.Item className='position-relative banner'>
+                <img
+                className="d-block w-100 banner-img"
+                src={banner3}
+                alt="First slide"
+                />
+                <Carousel.Caption className='overly'>
+                    <div className="description-title">
+                        <h1 className='fw-bold display-5'>Hormel Foods Corporation</h1>
+                        <h5 className='fw-bold'>You might also like to checkout our highly popular Items</h5>
+                        <p className='fe-bold'>Thsi is Popular Grocery stock store and all Popular items food able able</p>
+                        <button className='btn fs-6 cart-btn fw-bold rounded-pill'>Register Now</button>
+                    </div>
+                </Carousel.Caption>
+            </Carousel.Item>
+      
+    </Carousel>
 
             <div className="inventory my-5">
                 <h3 className='fw-bold text-primary my-4'>Our Manage Items</h3>
