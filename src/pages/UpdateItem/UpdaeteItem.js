@@ -121,6 +121,7 @@ const UpdaeteItem = ({updateProduct}) => {
                                 <input className='quantity-btn btn btn-danger' type="submit" value="Add Quantity" />
                             </div>
                         </form>
+                        <div className="rounded-pill border border-primary bg-primary bg-opacity-10 text-primary fw-bold w-25 mx-3 py-2 px-4">{stockQuantity}</div>
                         <div className="d-flex align-items-center justify-content-between p-3">
                             <Link to='/additem' className='btn cart-btn fw-bold rounded-pill'>Add Item</Link>
                             <Link to='/myitem' className='btn cart-btn fw-bold rounded-pill'>My Item</Link>

@@ -1,4 +1,4 @@
-import React, {useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import {FiShoppingCart} from 'react-icons/fi'
 import { Link, NavLink } from 'react-router-dom';
@@ -13,6 +13,7 @@ import {CgProfile} from 'react-icons/cg'
 import {BiMessageAltAdd} from 'react-icons/bi'
 import {AiOutlineFileProtect} from 'react-icons/ai'
 import {AiOutlinePropertySafety} from 'react-icons/ai'
+import {GiFruitBowl} from 'react-icons/gi'
 
 
 const Navbars = () => {
@@ -33,13 +34,25 @@ const displayTaggle = () => {
 }
 console.log(user?.photoURL)
 
+// // top scroll navbar
+// const [stickyClass, setStickyClass] = useState("");
+
+//     function stickNavbar() {
+//         let windowHeight = window.scrollY;
+//         setStickyClass("sticky-top") ? windowHeight > 500 : setStickyClass("fixed-top");
+//     }
+
+//     useEffect(() => {
+//         window.addEventListener("scroll", stickNavbar);
+//     }, []);
+
 console.log(toggle)
     return (
         <div>
-            <Navbar bg="" className='bg-nav' expand="lg">
+            <Navbar sticky="top" bg="" className={`bg-nav`} expand="lg">
                 <Container>
                     <Navbar.Brand as={Link} to='/'>
-                        <img src={logo} className='logo' alt="" />
+                        <h5 className='text-light my-0 py-0 fw-bold'><GiFruitBowl color='tomato' /> <span className='text-success'>H</span>.F.<span className='text-primary'>C</span></h5>
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">

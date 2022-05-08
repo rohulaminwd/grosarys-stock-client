@@ -52,7 +52,7 @@ const Home = ({handleUpdate}) => {
                 />
                 <Carousel.Caption className='overly'>
                     <div className="description-title">
-                        <h1 className='fw-bold display-5 text-danger'>Fresh Grocery Shopping</h1>
+                        <h1 className='fw-bold display-5'>Fresh Grocery Shopping</h1>
                         <h5 className='fw-bold'>You might also like to checkout our highly popular Items</h5>
                         <button className='btn fs-6 cart-btn fw-bold rounded-pill'>Register Now</button>
                     </div>
