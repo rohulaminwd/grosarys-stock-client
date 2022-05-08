@@ -16,6 +16,7 @@
 }
 .description-title{
     z-index: 999;
+    padding: 0 100px;
 }
 .inventory-container{
     display: grid;
@@ -80,5 +81,21 @@
 @media only screen and (max-width: 550px){
     .banner{
         height: 80%;
+    }
+    .banner-img{
+        height: 400px;
+    }
+    .inventory-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 10px;
+    }
+    .provide-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-gap: 10px;
+    }
+    .description-title{
+        padding: 0 50px;
     }
 }

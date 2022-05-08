@@ -31,6 +31,7 @@ const displayTaggle = () => {
         setToggle('none')
     }
 }
+console.log(user?.photoURL)
 
 console.log(toggle)
     return (
@@ -52,7 +53,7 @@ console.log(toggle)
                                 <NavLink className={({ isActive }) => isActive? 'actived-link' : 'linkd'} to="/additem">AddItem</NavLink>
                                 <NavLink className={({ isActive }) => isActive? 'actived-link' : 'linkd'} to="/myitem">MyItem</NavLink>
                                 <div onClick={() => displayTaggle()} className='user-profile ms-4'>
-                                    <img src={user?.photoURL} className='img-fluid opacity-10 cursor' alt="" />
+                                    <img src={user?.photoURL} className='img-fluid cursor' alt="" />
                                     <CgProfile className='fs-2 opacity-1 text-danger mt-1'></CgProfile>
                                     <div className='edite-profile' style={{display: toggle}}>
                                         <div className="profile">

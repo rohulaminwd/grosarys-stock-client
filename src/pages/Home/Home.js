@@ -40,7 +40,6 @@ const Home = ({handleUpdate}) => {
                     <div className="description-title">
                         <h1 className='fw-bold display-5'>Hormel Foods Corporation</h1>
                         <h5 className='fw-bold'>You might also like to checkout our highly popular Items</h5>
-                        <p className='fe-bold'>Thsi is Popular Grocery stock store and all Popular items food able able</p>
                         <button className='btn fs-6 cart-btn fw-bold rounded-pill'>Register Now</button>
                     </div>
                 </Carousel.Caption>
@@ -55,7 +54,6 @@ const Home = ({handleUpdate}) => {
                     <div className="description-title">
                         <h1 className='fw-bold display-5 text-danger'>Fresh Grocery Shopping</h1>
                         <h5 className='fw-bold'>You might also like to checkout our highly popular Items</h5>
-                        <p className='fe-bold'>Thsi is Popular Grocery stock store and all Popular items food able able</p>
                         <button className='btn fs-6 cart-btn fw-bold rounded-pill'>Register Now</button>
                     </div>
                 </Carousel.Caption>
@@ -70,8 +68,7 @@ const Home = ({handleUpdate}) => {
                 <Carousel.Caption className='overly'>
                     <div className="description-title">
                         <h1 className='fw-bold display-5'>Hormel Foods Corporation</h1>
-                        <h5 className='fw-bold'>You might also like to checkout our highly popular Items</h5>
-                        <p className='fe-bold'>Thsi is Popular Grocery stock store and all Popular items food able able</p>
+                        <h5 className='fw-bold my-3'>You might also like to checkout our highly popular Items</h5>
                         <button className='btn fs-6 cart-btn fw-bold rounded-pill'>Register Now</button>
                     </div>
                 </Carousel.Caption>
@@ -165,7 +162,8 @@ const Home = ({handleUpdate}) => {
             </div>
 
             <div className="online-support py-5">
-                <div className="container row d-flex justify-content-between align-items-center">
+                <div className="container">
+                <div className="row d-flex justify-content-center align-items-center">
                     <div className="col-md-5">
                         <div className="img" data-aos="zoom-in-right" data-aos-duration="800">
                             <img src={support} className='img-fluid' alt="" />
@@ -175,7 +173,7 @@ const Home = ({handleUpdate}) => {
                         <div className="text-start"  data-aos="zoom-in-left" data-aos-duration="800">
                             <div className="">
                                 <h1>Ganic Online Support</h1>
-                                <p>Tamin ipsum is simply dummy the prinng and tysetting industry. Lorem ipsum has been the industry's standard dummy that everince prinng when unknown printer took galley.</p>
+                                <p>Hormel  simply dummy the prinng and tysetting industry. this is standard dummy food everince prinng when unknown printer took galley.</p>
                             </div>
                             <div className="d-flex emo">
                                 <div className="border-end border-2 pe-2">
@@ -189,6 +187,7 @@ const Home = ({handleUpdate}) => {
                             </div>
                         </div>
                     </div>
+                </div>
                 </div>
             </div>
         </div>

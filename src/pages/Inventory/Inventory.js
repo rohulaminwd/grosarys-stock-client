@@ -13,7 +13,7 @@ const Inventory = () => {
         const prossed = window.confirm('Are YOu sure detele this user')
         if(prossed){
             console.log(id)
-            const url = `http://localhost:5000/product/${id}`;
+            const url = `https://cryptic-hollows-59204.herokuapp.com/product/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

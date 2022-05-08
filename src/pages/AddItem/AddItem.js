@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { toast} from 'react-toastify';
 import auth from '../../firebase.init';
 import './AddItem.css'
+import '../UpdateItem/Update.css'
 
 const AddItem = () => {
     const [user] = useAuthState(auth)
@@ -21,7 +22,7 @@ const AddItem = () => {
         console.log(product)
         
         // send data to the server
-        fetch('http://localhost:5000/product', {
+        fetch('https://cryptic-hollows-59204.herokuapp.com/product', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

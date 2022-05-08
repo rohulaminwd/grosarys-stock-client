@@ -62,3 +62,15 @@
     border-top: 2px solid tomato;
     width: 100%;
 }
+
+
+
+
+
+
+
+@media only screen and (max-width: 500px){
+    .update-item{
+       max-width: 300px;
+    }
+}
