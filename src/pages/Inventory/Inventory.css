@@ -27,7 +27,7 @@
 .products-container{
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 10px;
+    grid-row-gap: 10px;
 }
 .delete-btn{
     position: absolute;

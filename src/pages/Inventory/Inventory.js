@@ -7,7 +7,7 @@ import useProducts from '../../hooks/useProducts';
 import './Inventory.css'
 
 const Inventory = () => {
-    const [products, setProduct] = useProducts()
+    const [products, setProduct, loading] = useProducts()
 
     const handleProductDelete = id => {
         const prossed = window.confirm('Are YOu sure detele this user')
@@ -26,7 +26,7 @@ const Inventory = () => {
             toast("Deleted successfully");
         }
     }
-    if(!products){
+    if(loading === true){
         return <Loading></Loading>
     }
 

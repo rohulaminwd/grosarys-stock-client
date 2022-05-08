@@ -8,6 +8,7 @@ const UpdaeteItem = ({updateProduct}) => {
 
     const {id} = useParams()
     const [product, setProdcut] = useState({})
+    const [loading, setLooding] = useState(true)
     let quantity = parseInt(product?.stock)
     useEffect(() => {
         setQuantity(quantity)
@@ -20,11 +21,16 @@ const UpdaeteItem = ({updateProduct}) => {
         const url = `https://cryptic-hollows-59204.herokuapp.com/product/${id}`;
         fetch(url)
         .then(res => res.json())
-        .then(data => setProdcut(data))
+        .then(data => {
+            if(data){
+                setProdcut(data)
+                setLooding(false)
+            }
+        })
     }, [])
 
     
-    if(!product){
+    if(loading === true){
         return <Loading></Loading>
     }
 

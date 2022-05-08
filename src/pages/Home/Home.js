@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {FaHandsHelping} from 'react-icons/fa'
 import {GrDeliver} from 'react-icons/gr'
@@ -15,11 +15,16 @@ import Loading from '../../components/Loding/Loding';
 import { Carousel } from 'react-bootstrap';
 
 const Home = ({handleUpdate}) => {
-    const [products, setProduct] = useProducts()
+    const [products, setProduct, loading] = useProducts()
     const [index, setIndex] = useState(0);
 
     console.log(products.length)
-    if(!products){
+
+    if(loading === true){
+        return <Loading></Loading>
+    } 
+
+    if(loading === true){
         return <Loading></Loading>
     }
 
